@@ -20,6 +20,8 @@ body{
 }
 #result{
 	height: 120px;
+	background-color: white;
+
 }
 #history{
 	text-align: right;
