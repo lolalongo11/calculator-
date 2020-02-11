@@ -1,0 +1,386 @@
+February 10
+GitPod or GitHub
+Operator profile
+No problem. Can you tell us a little bit about what you're trying to achieve?
+Hello, I am have just submitted my interactive project. The browser was showing my work before submitting and now it is not. The code works as I have checked on AWS popping out to the browser.
+I am also having with Github as I keep receiving an error message each time I try to push
+Could you please provide a link to either your GitHub of your GitPod work space that you could share with us so we can have a look at the issue? 
+Source code URL
+https://github.com/lolalongo11/calculator-
+Operator profile
+Thanks! Next, to help our team provide the best advice, Is there any error message that you're seeing? Is it giving you any indication of what may be causing the issue?
+Any screenshots that you can provide would be most welcome. :) 
+Cloning into 'calculator-'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+ubuntu:~/environment (master) $
+this is the message I keep getting on Git when I try to push.....
+Please can you help? Thank you
+Operator profile
+Can you tell us what you've tried so far to try to fix the issue? 
+Any screenshots of what you've tried so far would also be really helpful. 😀
+I have not tried to fix it as I am not sure how.....
+Operator profile
+Where are you currently thinking the issue is coming from? 
+not sure.....
+Operator profile
+Great, just one last question here. :)
+What can we do to best help you troubleshoot the issue here?
+Please keep in mind that as tutors, we're here to help provide you with guidance on how to tackle the issue, however, tutors will not solve the problem for you. 
+not sure?
+I have looked on slack before I came to the tutors
+Operator profile
+Great, thanks for sending that on. We'll be with you as soon as we can! 
+Our current tutoring hours are:
+Monday - Friday: 24 hours
+Saturday/Sunday: 9am - 5pm (UTC)
+great thank you
+I had to manually add my files to git hub instead of linking from bash terminal as they will not sync?
+Operator profile
+Please note that during periods of high volume, especially after 20:00 on weeknights, and on weekends, that it may take us a bit longer than normal to respond. We appreciate your patience, and we will respond as soon as we are able. 
+Haley profile
+Hi there, thanks for your message. Can you provide me with the following info here please: 
+Are you working on AWS C9 or GitPod?
+If you do git remote -v in your terminal, what do you see?
+When you manually added files to github, how did you go about doing this? Did you do it via the terminal or via the GitHub site itself?
+Hi Haley,
+I am on AWS
+If I do git remote -v I see this:
+origin lolalongo11 (fetch)
+origin lolalongo11 (push)
+I manually added by adding and saving the code into the files themselves
+I saved my code into notepad and then dragged and dropped
+the 3 files
+html script and css
+Haley profile
+Hmm, okay, normally it would say something like this 
+origin https://github.com/hschafer2017/my_repo_name
+strange. I did clone to link up at first but it just does not seem to be working. I did the same thing as when I created my other project which worked fine.
+Haley profile
+If you run the command git log --oneline , what do you see? 
+If you don't see any of your commits there, you can do the following commands in this order: 
+git remote rm origin
+git remote add origin https://github.com/lolalongo11/calculator-.git
+git stash
+git pull origin master
+git stash pop
+ok, I have done the following commits in that order as I did not see any of my commits
+Okay, great. So when you did git pull, did you see more files pop into your workspace?
+Haley profile
+If so, now try `
+git push -u origin master
+and you should be all set. :) 
+this is what I get.....
+ubuntu:~/environment (master) $ git push -u origin master
+Username for 'https://github.com/lolalongo11/calculator-.git': lolalongo11
+Password for 'https://lolalongo11@github.com/lolalongo11/calculator-.git':
+To https://github.com/lolalongo11/calculator-.git
+! [rejected] master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/lolalongo11/calculator-.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+ubuntu:~/environment (master) $
+Hi there, Anna here. So sorry for the delay in getting to your question. As usual the tutor tab has been very busy this evening.
+Anna profile
+Have you googled this error message to see if you can find a guide to solving it?
+Hi Anna, No worries at all. Sorry for my late reply, I was just getting my 2 year old fed bath and off to bed. I have tried googling but with no luck.
+Ah yes I know how that is! I was getting my 5yo to do the same thing before I started my evening shift.
+I have a saved response here I wrote a while ago to help walk you through a git pull. I will find it for you.
+Anna profile
+Sometimes there are conflicts between your github repository and your local one. This can happen because you made a change directly on github, or because you are working from two computers or IDEs. Here is how to do a git pull and fix and merge conflicts:
+In the terminal type git pull origin master . This pulls your files from GitHub
+Type git status to see which files have a conflict that needs fixing.
+Then check those files and look for places marked with #### or <<<<. These are the areas that differ between your local files and the Github ones. Correct these areas until the code is how you need it to be.
+Save all the files you changed.
+Then in the terminal type git add .  (don't forget the . that will add all the files changed since the last time they were committed.
+Then git commit -m "fixed merge conflict"  You will know the merge is complete because (master | MERGING)  will return to just (master)  in the terminal
+Finally git push origin master so all your files are synced up.
+Hi there 😀 I have tried all that and this is the result, still getting an error message....
+ubuntu:~/environment (master) $ git pull origin master
+From https://github.com/lolalongo11/calculator-
+* branch master -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+ubuntu:~/environment (master) $ git status
+On branch master
+Changes not staged for commit:
+(use "git add <file>..." to update what will be committed)
+(use "git checkout -- <file>..." to discard changes in working directory)
+modified: .c9/metadata/environment/README.md
+modified: .c9/metadata/environment/index.html
+modified: .c9/metadata/environment/script.js
+modified: .c9/metadata/environment/style.css
+no changes added to commit (use "git add" and/or "git commit -a")
+ubuntu:~/environment (master) $ git add .
+ubuntu:~/environment (master) $ git commit -m "fixed merge conflict"
+[master 0ae8503] fixed merge conflict
+Committer: Ubuntu <ubuntu@ip-172-31-46-59.eu-west-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+After doing this, you may fix the identity used for this commit with:
+git commit --amend --reset-author
+4 files changed, 4 insertions(+), 4 deletions(-)
+ubuntu:~/environment (master) $ git push origin master
+Username for 'https://github.com/lolalongo11/calculator-.git': lolalongo11
+Password for 'https://lolalongo11@github.com/lolalongo11/calculator-.git':
+To https://github.com/lolalongo11/calculator-.git
+! [rejected] master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/lolalongo11/calculator-.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+ubuntu:~/environment (master) $
+Anna profile
+Ok I think that failed because you still had some files that were not committed before you tried to do a git pull. I think you have committed them now, can you do a git status to check that there are no files waiting to be committed?
+hi there, yes working tree clean it says
+I have tried again and the same issue:
+ubuntu:~/environment (master) $ git status
+On branch master
+nothing to commit, working tree clean
+ubuntu:~/environment (master) $ git push origin master
+Username for 'https://github.com/lolalongo11/calculator-.git': lolalongo11
+Password for 'https://lolalongo11@github.com/lolalongo11/calculator-.git':
+To https://github.com/lolalongo11/calculator-.git
+! [rejected] master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/lolalongo11/calculator-.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+ubuntu:~/environment (master) $
+Anna profile
+Ok, can you try the git pull process again please? I think the original git pull failed because you had uncommitted files. 
+Anna profile
+I'm just checking in to let you know that I'm finishing up tutoring support for the day. 
+If you reply to this message, your question will be added back into the queue and another tutor will get in touch with you (please do not create another conversation). Alternatively, I will check back in with you when I'm back online.
+
+Our current tutoring hours are:
+Monday - Friday: 24 hours
+Saturday/Sunday: 9am - 5pm (UTC)
+Hi there, I tried that too but its still not working this is the error I get:
+ubuntu:~/environment (master) $ git push origin master
+Username for 'https://github.com/lolalongo11/calculator-.git': lolalongo11
+Password for 'https://lolalongo11@github.com/lolalongo11/calculator-.git':
+To https://github.com/lolalongo11/calculator-.git
+! [rejected] master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/lolalongo11/calculator-.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+ubuntu:~/environment (master) $ git pull origin master
+From https://github.com/lolalongo11/calculator-
+* branch master -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+ubuntu:~/environment (master) $ git status
+On branch master
+nothing to commit, working tree clean
+ubuntu:~/environment (master) $ git add .
+ubuntu:~/environment (master) $ git commit -m "fixed merge conflict"
+On branch master
+nothing to commit, working tree clean
+ubuntu:~/environment (master) $ git push origin master
+Username for 'https://github.com/lolalongo11/calculator-.git': lolalongo11
+Password for 'https://lolalongo11@github.com/lolalongo11/calculator-.git':
+To https://github.com/lolalongo11/calculator-.git
+! [rejected] master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/lolalongo11/calculator-.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+ubuntu:~/environment (master) $
+Hi there! 
+Sammy here for Anna as shes finished up for the day - thank you for waiting here! 
+Having a look at those error messages, can I get you to try 
+git pull --allow-unrelated-histories
+Samantha profile
+And then merge changes after that as you were trying for a start :) 
+February 11
+Samantha profile
+I'm just checking in to let you know that I'm finishing up tutoring support for the day. 
+If you reply to this message, your question will be added back into the queue and another tutor will get in touch with you (please do not create another conversation). Alternatively, I will check back in with you when I'm back online.
+
+Our current tutoring hours are:
+Monday - Friday: 24 hours
+Saturday/Sunday: 9am - 5pm (UTC)
+Tim profile
+Hey! Let me know if you can see this chat now from the Tutor Tab? We'll continue the chat here from the existing conversation if that's okay?
+Hi yes, I can see this
+that is great thank you
+I'm just going to put that last messages you sent here as well.
+
+
+
+BTW I should add this is for my project submission that I have sent in...
+
+I also am having issues cloning to git:
+ubuntu:~/environment (master) $ git clone git@github.com:lolalongo11/calculator-.git
+Cloning into 'calculator-'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+ubuntu:~/environment (master) $
+Tim profile
+It sounds like you're in AWS Cloud9, based off of   ubuntu:~/environment(master)   is that correct?
+yes that is right
+Tim profile
+No problem!
+Can I also just check, that this is the repository that you're working with on cloud9?
+https://github.com/lolalongo11/calculator-
+Hi there, yes thats the one
+Okay... let's try a few things in that case. Sorry for the back/forth coming up. It's not as simple with AWS Cloud9 vs using Gitpod where we can see the code live.
+Tim profile
+git remote -v
+What shows up on there?
+origin https://github.com/lolalongo11/calculator-.git (fetch)
+origin https://github.com/lolalongo11/calculator-.git (push)
+Tim profile
+Cool! So we've got the right repo, that's a good start.
+
+git branch -a
+What's it show?
+ubuntu:~/environment (master) $ git branch -a
+* master
+remotes/origin/master
+ubuntu:~/environment (master) $
+Tim profile
+Good stuff.
+git pull origin master
+?
+ubuntu:~/environment (master) $ git pull origin master
+From https://github.com/lolalongo11/calculator-
+* branch master -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+ubuntu:~/environment (master) $
+Tim profile
+git pull --allow-unrelated-histories
+ubuntu:~/environment (master) $ git pull --allow-unrelated-histories
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+git pull <remote> <branch>
+If you wish to set tracking information for this branch you can do so with:
+git branch --set-upstream-to=origin/<branch> master
+ubuntu:~/environment (master) $
+Tim profile
+git pull origin master --allow-unrelated-histories
+Sorry - try this one actualy
+no worries 😀
+ubuntu:~/environment (master) $ git pull origin master --allow-unrelated-histories
+From https://github.com/lolalongo11/calculator-
+* branch master -> FETCH_HEAD
+hint: Waiting for your editor to close the file... fatal: cannot run /usr/bin/nano: No such file or directory
+error: unable to start editor '/usr/bin/nano'
+Not committing merge; use 'git commit' to complete the merge.
+ubuntu:~/environment (master|MERGING) $
+Tim profile
+git commit -m "Merging Allow Unrelated Histories"
+ubuntu:~/environment (master|MERGING) $ git commit -m "Merging Allow Unrelated Histories"
+[master dc7dc9e] Merging Allow Unrelated Histories
+Committer: Ubuntu <ubuntu@ip-172-31-46-59.eu-west-1.compute.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+After doing this, you may fix the identity used for this commit with:
+git commit --amend --reset-author
+ubuntu:~/environment (master) $
+Tim profile
+Do those two lines with your actual name and email address
+
+
+git config --global user.name "Your Name"
+git config --global user.email you@example.com
+
+ubuntu:~/environment (master) $ git config --global user.name "lolalongo11"
+ubuntu:~/environment (master) $ git config --lolalongo11@gmail.com
+error: unknown option `lolalongo11@gmail.com'
+usage: git config [<options>]
+Config file location
+--global use global config file
+--system use system config file
+--local use repository config file
+-f, --file <file> use given config file
+--blob <blob-id> read config from given blob object
+Action
+--get get value: name [value-regex]
+--get-all get all values: key [value-regex]
+--get-regexp get values for regexp: name-regex [value-regex]
+--get-urlmatch get value specific for the URL: section[.var] URL
+--replace-all replace all matching variables: name value [value_regex]
+--add add a new variable: name value
+--unset remove a variable: name [value-regex]
+--unset-all remove all matches: name [value-regex]
+--rename-section rename section: old-name new-name
+--remove-section remove a section: name
+-l, --list list all
+-e, --edit open an editor
+--get-color find the color configured: slot [default]
+--get-colorbool find the color setting: slot [stdout-is-tty]
+Type
+--bool value is "true" or "false"
+--int value is decimal number
+--bool-or-int value is --bool or --int
+--path value is a path (file or directory name)
+--expiry-date value is an expiry date
+Other
+-z, --null terminate values with NUL byte
+--name-only show variable names only
+--includes respect include directives on lookup
+ubuntu:~/environment (master) $ ubuntu:~/environment (master) $ git config --"lolalongo11"
+bash: syntax error near unexpected token `master'
+ubuntu:~/environment (master) $ ubuntu:~/environment (master) $ git config --lolalongo11@gmail.com
+bash: syntax error near unexpected token `master'
+ubuntu:~/environment (master) $
+git config --global user.name "lolalongo11"       <hit enter>
+
+
+git config --global user.email lolalongo11@gmail.com       <hit enter>
+Tim profile
+Try those entries
+ok looks like we are getting there, no error message
+ubuntu:~/environment (master) $ git config --global user.name "lolalongo11"
+ubuntu:~/environment (master) $ git config --global user.email lolalongo11@gmail.com
+ubuntu:~/environment (master) $
+Good stuff... now try:
+
+git push origin master
+Tim profile
+Woohoo!!! Your GitHub repo was updated with 6 additional commits now!
+you are a genius!!!
+Any idea what I did wrong?
+Tim profile
+So now... whenever you're making any changes on your project.... there are only 3 commands you need to remember.
+
+
+
+git add --all
+git commit -m "Whatever commit message here"
+git push origin master
+
+
+--all      this is a better version of    git add .      because it includes all files and sub-folders.
+You can do git add and then each file individually if you'd like, but I tend to use git add --all myself
+ok cool thank you so much 😀
+Tim profile
+You're very welcome! 😁
+
+Is there anything else I might be able to assist with?
+No thank you, you have been awesome!
+Tim profile
+No problem at all! I'll let the two lovely ladies from last night know as well.
+All the best going forward, and glad you're able to push on now!
+Take care 👋😁
+Brilliant, cheers 😀
+Just now. Seen
+Tim profile
