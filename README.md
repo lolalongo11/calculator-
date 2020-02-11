@@ -20,7 +20,7 @@ I conducted UAT after each push to GitHub and after each re login to AWs as well
 I tested by individually selecting each feature and ensuring that the page was rendering correctly with all expected code working as intended. 
 
 ## UAT
-All code works as expected 
+All code works as expected however I had major issues with my Github repo and needed help from the tutors to resolve the issue. I could not at one point add my files to git hub by cloning and git push origin master so I had to save my code manually as notepad files and upload manually. Finally my repo and login info was fixed (after submutting my project) and I have been able to link from AWS cloud 9 ubuntu server to my Git repo. Tutor conversation is attached as seperate file. 
 
 ### Browser Compatability
 I tested the following browsers for compatability success: IE, Chrome, Firefox, Edge, Mozilla.
@@ -37,6 +37,7 @@ git push origin master
 
 I used information and help from: Javascript & JQuery book by, Jon Duckett
 I watched various tutorials from the CI course to familiarise myself with the JS code
+I got inspired by a YouTube channel - https://www.youtube.com/watch?v=CI2GwL--ll8&t=414s and followed the tutorial to create my own simple calculator. I used some of the JavaScript code that was used and took guidance from there for the interactive part. 
 
 
 
